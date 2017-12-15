@@ -27,233 +27,45 @@
         <div class="row">
           <div class="col-md-4">
             <div class="game-results">
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">Correct: <span id="corect-answers"></span></li>
-                <li class="list-group-item">Incorrect: <span id="incorrect-answers"></span></li>
-                <li class="list-group-item">Unanswered: <span id="unanswered-questions"></span></li>
+              <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  Correct: 
+                  <span class="badge badge-primary badge-pill" id="corect-answers">0</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  Incorrect: 
+                  <span class="badge badge-primary badge-pill" id="incorrect-answers">0</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  Unanswered: 
+                  <span class="badge badge-primary badge-pill" id="unanswered-questions">0</span>
+                </li>
               </ul>
             </div>
           </div>
         </div>
       </div>
       
-      
-      <!-- Question #1 -->
-      <div class="row mb-3">
-        <div class="col-md-12">
-          <div class="card">
-            <h4 class="card-header">Who has the most NBA championships as a player?</h4>
-            <div class="card-body">
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                  Michael Jordan
-                </label>
-              </div>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                  Bill Russell
-                </label>
-              </div>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
-                  Robert Horry
-                </label>
-              </div>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="option4">
-                  Earvin "Magic" Johnson
-                </label>
+     <div class="questions">  
+        <!-- Questions -->
+        <div class="row mb-3">
+          <div class="col-md-12">
+            <div class="card">
+              <h4 class="card-header question">-</h4>
+              <div class="card-body">
+                <div class="form-check">
+                  <label class="form-check-label options">
+                    <input class="form-check-input" type="radio" name="question" id="exampleRadios1">
+                    -
+                  </label>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      
-      <!-- Question #2 -->
-      <div class="row mb-3">
-        <div class="col-md-12">
-          <div class="card">
-            <h4 class="card-header">Who has the most career NFL passing yards?</h4>
-            <div class="card-body">
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                  Peyton Manning
-                </label>
-              </div>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                  Brett Favre
-                </label>
-              </div>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
-                  Drew Brees
-                </label>
-              </div>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="option4">
-                  Dan Marino
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Question #3 -->
-      <div class="row mb-3">
-        <div class="col-md-12">
-          <div class="card">
-            <h4 class="card-header">What golfer has the most career PGA Tour wins?</h4>
-            <div class="card-body">
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                  Jack Nicklaus
-                </label>
-              </div>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                  Tiger Woods
-                </label>
-              </div>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
-                  Sam Snead
-                </label>
-              </div>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="option4">
-                  Arnold Palmer
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Question #4 -->
-      <div class="row mb-3">
-        <div class="col-md-12">
-          <div class="card">
-            <h4 class="card-header">What school has the most NCAA division I men's basketball championships?</h4>
-            <div class="card-body">
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                  North Carolina
-                </label>
-              </div>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                  Duke
-                </label>
-              </div>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
-                  UCLA
-                </label>
-              </div>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="option4">
-                  Kentucky
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Question #5 -->
-      <div class="row mb-3">
-        <div class="col-md-12">
-          <div class="card">
-            <h4 class="card-header">What player has the most World Series rings?</h4>
-            <div class="card-body">
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                  Yogi Berra
-                </label>
-              </div>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                  Joe DiMaggio
-                </label>
-              </div>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
-                  Lou Gehrig
-                </label>
-              </div>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="option4">
-                  Phil Rizzuto
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Question #6 -->
-      <div class="row mb-3">
-        <div class="col-md-12">
-          <div class="card">
-            <h4 class="card-header">What golfer has the most mins in Major Championships?</h4>
-            <div class="card-body">
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                  Walter Hagen
-                </label>
-              </div>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                  Tiger Woods
-                </label>
-              </div>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
-                  Jack Nicklaus
-                </label>
-              </div>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="option4">
-                  Ben Hogan
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-
-
-
+      </div> 
     </div>
-    
-            
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
