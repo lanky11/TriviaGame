@@ -1,23 +1,17 @@
-// Hide  elements
-//=======================================================================================================================
-   //$('.questions').hide();
-   //$('.game-results').hide();
 
-
-
-
-$(document).ready(function() {
   
 
+$(".start-game").on("click", function() {
+  game.start();
+}); 
 
-// Variables
-//=======================================================================================================================
-    
-    
-var numCorrect;
-var numIncorrect;
-var numUnanswered;
-var counter;
+
+$(document).on("click", "#done", function(){
+  game.done();
+});
+
+  
+
 
 // Game questions and answers
 
@@ -60,107 +54,117 @@ var questions = [{
 ];
 
 
-// Loop over questions to display them on the page with the answer options
-
-for(var i=0; i<questions.length; i++) {
-  $(".question").append(questions[i].question);
-  
-  for (var j=0; j<questions[i].options.length; j++) {
-    $(".options").append(questions[i].options[j]);
-  }
-  
-  console.log(questions[i].question);
-  console.log(questions[i].options);
-  console.log(questions[i].answer);
-}
 
 
 
-// Functions
-//=======================================================================================================================
-    
+var game = {
+  correct: 0,
+  incorrect: 0,
+  counter: 10,
   
-function newGame() {
-  
-  numCorrect = 0;
-  numIncorrect = 0;
-  numUnanswered = 0;    
-    
-}  
-  
-  
-  
-  
-  
-  
-  
-  
-// Function calls and User interaction
-//=======================================================================================================================
+  countdown: function() {
+	  game.counter--;
+	  $("#counter").html(game.counter);
 
- 
-  $("#correct-answer").text(numCorrect);
-  $("#incorrect-answer").text(numIncorrect);
-  $("#unanswered").text(numUnanswered);
-    
-    
-    
-   
-  // Timer ========================
+	  if (game.counter <= 0) {
+		  game.done();
+	  }
+	},
+	
+	start: function() {
+	  
+	  var timer = setInterval(game.countdown, 1000);
+	  $('.main-display').prepend('<h2>Time Remaining: <span id="counter">60</span> Seconds</h2>');
+	  
+	  $('.start-game').remove();
   
-    //  Set our counter to 120secs
-    counter = 120;
-
-    //  Variable that will hold our interval ID when we hit start
-    var intervalId;
-
-    //  When the start button gets clicked, execute the run function.
-    $(".btn-primary").on("click", run);
-
-    
-    //  The run function sets an interval that runs the decrement function once a second.
-    function run() {
-      intervalId = setInterval(decrement, 1000);
-      $('.questions').show();
-    }
-
-    //  The decrement function.
-    function decrement() {
+    // Loop over questions to display them on the page with the answer options
+    for(var i=0; i<questions.length; i++) {
+      $(".main-display").append('<h2>' + questions[i].question + '</h2>');
       
-      //  Decrease counter by one.
-      counter--;
-
-      //  Show the counter in the .display-time tag.
-      $(".display-time").html("<h2>" + counter + "</h2>");
-
-
-      //  Once counter hits zero...
-      if (counter === 0) {
-
-        //  ...run the stop function.
-        stop();
-        
-        // hide all the questions
-        // $('.questions').hide();
-        
-        // show the results
-        // $('.game-results').show();
-
-        //  Alert the user that time is up.
-        alert("Time Up!");
+      for (var j=0; j<questions[i].options.length; j++) {
+        $(".main-display").append('<input type="radio" name ="question' + '-' + i + '"value="' + questions[i].options[j] + '">' + questions[i].options[j]);
       }
     }
+    
+    $('.main-display').append('<br><button id="btn btn-primary btn-lg mb-3 end-game">End Game</button>')
+  	  
+  },
+  
+  done: function() {
+    $.each($("input[name='question-0']:checked"), function() {
+  			if ($(this).val() == questions[0].answer) {
+  				game.correct++;
+  			} else {
+  				game.incorrect++;
+  			}
 
-    //  The stop function
-    function stop() {
+  		});
+  		
+  	$.each($("input[name='question-1']:checked"), function() {
+  			if ($(this).val() == questions[1].answer) {
+  				game.correct++;
+  			} else {
+  				game.incorrect++;
+  			}
 
-      //  Clears our intervalId
-      clearInterval(intervalId);
-    }
+  		});
+  		
+  	$.each($("input[name='question-2']:checked"), function() {
+  			if ($(this).val() == questions[2].answer) {
+  				game.correct++;
+  			} else {
+  				game.incorrect++;
+  			}
 
+  		});
+  		
+  	$.each($("input[name='question-3']:checked"), function() {
+  			if ($(this).val() == questions[3].answer) {
+  				game.correct++;
+  			} else {
+  				game.incorrect++;
+  			}
+
+  		});
+  		
+  	$.each($("input[name='question-4']:checked"), function() {
+  			if ($(this).val() == questions[4].answer) {
+  				game.correct++;
+  			} else {
+  				game.incorrect++;
+  			}
+
+  		});
+  		
+  	$.each($("input[name='question-5']:checked"), function() {
+  			if ($(this).val() == questions[5].answer) {
+  				game.correct++;
+  			} else {
+  				game.incorrect++;
+  			}
+
+  		});
+  		
+  this.result();
+    
+  },
+  
+  result: function() {
+  	clearInterval(timer);
+  
+    $(".main-display h2").remove();
+    $(".main-display").html("<h2>You're Done!</h2>");
+    $(".main-display").append("<h3>Correct: " + this.correct + "</h3>");
+    $(".main-display").append("<h3>Incorrect: " + this.incorrect + "</h3>");
+    $(".main-display").append("<h3>Unanswered: " + (questions.length - (this.incorrect + this.correct)) + "</h3>");
+  
+  }
+  
+	
+};
+  
     
     
-    
-    
-    
-});
+
+

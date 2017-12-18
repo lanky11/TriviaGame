@@ -13,57 +13,20 @@
     
     <div class="container">
       
+      <!-- Title -->
       <div class="jumbotron">
         <h1 class="display-3 text-center">Sports Trivia</h1>
-        <p class="lead text-center">A trivia game that will test your sports IQ.</p>
         <hr class="my-4">
-        <p class="text-center">Click the buttong when you are ready to begin.  Once the clock starts you will have 2min to answer all the questions.</p>
-        <div class="text-center">
-          <button type="button" class="btn btn-primary btn-lg mb-3">Start Game</button>
-        </div>
-        <div class="col-md-12 text-center">
-          <h3>Time Left:<span class="display-time"></span></h3>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="game-results">
-              <ul class="list-group">
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                  Correct: 
-                  <span class="badge badge-primary badge-pill" id="corect-answers">0</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                  Incorrect: 
-                  <span class="badge badge-primary badge-pill" id="incorrect-answers">0</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                  Unanswered: 
-                  <span class="badge badge-primary badge-pill" id="unanswered-questions">0</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <p class="text-center">Click the buttong when you are ready to begin.  Once the clock starts you will have 60 seconds to answer all the questions.</p>
       </div>
-      
-     <div class="questions">  
-        <!-- Questions -->
-        <div class="row mb-3">
-          <div class="col-md-12">
-            <div class="card">
-              <h4 class="card-header question">-</h4>
-              <div class="card-body">
-                <div class="form-check">
-                  <label class="form-check-label options">
-                    <input class="form-check-input" type="radio" name="question" id="exampleRadios1">
-                    -
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
+      <!-- Main Viewing Window -->
+      <div class="main-display mb-3">
+        <div class="text-center">
+          <button type="button" class="btn btn-primary btn-lg mb-3 start-game">Start Game</button>
+        </div>  
       </div> 
+      
     </div>
 
 
