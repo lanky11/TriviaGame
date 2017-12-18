@@ -6,15 +6,12 @@ $(".start-game").on("click", function() {
 }); 
 
 
-$(document).on("click", "#done", function(){
+$(document).on("click", "#end-game", function(){
   game.done();
 });
 
-  
-
 
 // Game questions and answers
-
 var questions = [{
   
     question: "Who has the most NBA championships as a player?",
@@ -56,7 +53,7 @@ var questions = [{
 
 
 
-
+// create object that contains functions and variables needed for the game
 var game = {
   correct: 0,
   incorrect: 0,
@@ -67,15 +64,18 @@ var game = {
 	  $("#counter").html(game.counter);
 
 	  if (game.counter <= 0) {
+	    // run done function when time reaches 0
 		  game.done();
 	  }
 	},
 	
 	start: function() {
 	  
-	  var timer = setInterval(game.countdown, 1000);
+	  // sets timer to run countdown function ever 1sec
+	  timer = setInterval(game.countdown, 1000);
 	  $('.main-display').prepend('<h2>Time Remaining: <span id="counter">60</span> Seconds</h2>');
 	  
+	  // remove start game button
 	  $('.start-game').remove();
   
     // Loop over questions to display them on the page with the answer options
@@ -87,11 +87,15 @@ var game = {
       }
     }
     
-    $('.main-display').append('<br><button id="btn btn-primary btn-lg mb-3 end-game">End Game</button>')
+    $('.main-display').append('<br><button id="end-game">End Game</button>')
   	  
   },
   
+  
+  
   done: function() {
+    
+    //checks clicked answer against answer for questions 1-6
     $.each($("input[name='question-0']:checked"), function() {
   			if ($(this).val() == questions[0].answer) {
   				game.correct++;
@@ -145,7 +149,8 @@ var game = {
   			}
 
   		});
-  		
+  
+  // shows the result of quiz		
   this.result();
     
   },
