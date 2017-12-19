@@ -1,0 +1,14 @@
+.jumbotron {
+    background-image: url("../../assets/images/grass.jpg");
+    color: white;
+    font-weight: bold;
+}
+
+body {
+    background-color: #9ACEDC;
+}
+
+.display-3 {
+    font-weight: bold;
+    
+}
