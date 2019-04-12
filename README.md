@@ -1,3 +1,3 @@
-# TriviaGame
+# Sports Trivia Game
 
-Due 12/20/17
+### [Visit Site](https://leifswenson.github.io/TriviaGame/)
